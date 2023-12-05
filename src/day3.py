@@ -1,6 +1,5 @@
 import re
 from collections import namedtuple
-from dataclasses import dataclass, astuple
 from functools import reduce
 
 Rectangle = namedtuple('Rectangle', 'x y w value')
