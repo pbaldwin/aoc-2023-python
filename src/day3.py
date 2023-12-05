@@ -1,13 +1,9 @@
 import re
+from collections import namedtuple
 from dataclasses import dataclass, astuple
 from functools import reduce
 
-@dataclass
-class Rectangle:
-  x: int
-  y: int
-  w: int
-  value: int or str
+Rectangle = namedtuple('Rectangle', 'x y w value')
 
 def parse_nums(input):
   state = []
@@ -34,8 +30,8 @@ def parse_symbols(input):
   return state
 
 def detect_collision(rect_1, rect_2):
-  x1, y1, w1, _1 = astuple(rect_1)
-  x2, y2, w2, _2 = astuple(rect_2)
+  x1, y1, w1, _ = rect_1
+  x2, y2, w2, _ = rect_2
 
   return (x1 + w1 >= x2 + 1 and # rect_1 right edge past rect_2 left
           x1 <= x2 + w2 - 1 and # rect_1 left edge past rect_2 right
