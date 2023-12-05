@@ -1,4 +1,4 @@
-from src import utils, day1, day2, day3
+from src import utils, day1, day2, day3, day4
 
 day1_input = utils.inputlist('../input/day1.txt')
 print("Day 1 Part 1 " + str(day1.part_1(day1_input)))
@@ -11,3 +11,7 @@ print("Day 2 Part 2 " + str(day2.part_2(day2_input)))
 day3_input = utils.inputlist('../input/day3.txt')
 print("Day 3 Part 1 " + str(day3.part_1(day3_input)))
 print("Day 3 Part 2 " + str(day3.part_2(day3_input)))
+
+day4_input = utils.inputlist('../input/day4.txt')
+print("Day 4 Part 1 " + str(day4.part_1(day4_input)))
+print("Day 4 Part 2 " + str(day4.part_2(day4_input)))
