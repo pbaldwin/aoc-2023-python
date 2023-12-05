@@ -1,4 +1,4 @@
-from parse import parse, compile
+from parse import compile
 
 def parse_list(nums):
   return nums.strip().split()
@@ -19,17 +19,16 @@ def double_recursive(n):
   return 2 * double_recursive(n - 1)
 
 def part_1(input):
-  sum = 0
+  scores = []
 
   for line in input:
     matches = get_matches(line)
-    sum += double_recursive(matches)
+    scores.append(double_recursive(matches))
 
-  return sum
+  return sum(scores)
 
 def part_2(input):
-  sum = 0
-  cards = [1 for n in range(0, len(input))]
+  cards = [1] * len(input)
 
   for li, line in enumerate(input):
     instances = cards[li]
@@ -39,7 +38,5 @@ def part_2(input):
       next = li + 1
       for i in range(next, next + matches):
         cards[i] += instances
-    
-    sum += instances
 
-  return sum
+  return sum(cards)
