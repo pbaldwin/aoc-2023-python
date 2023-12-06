@@ -16,8 +16,7 @@ def part_1(input):
   distances = [int(i) for i in input[1].split()[1:]]
   total = 1
   
-  for t, time in enumerate(times):
-    distance = distances[t]
+  for time, distance in zip(times, distances):
     win_conditions = calculate_wins(time, distance)
     total *= win_conditions
 
