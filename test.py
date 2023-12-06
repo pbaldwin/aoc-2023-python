@@ -1,11 +1,12 @@
 import unittest
-from src import utils, day1, day2, day3, day4
+from src import utils, day1, day2, day3, day4, day5
 
 day1_input = utils.inputlist('../test_input/01.txt')
 day1_2_input = utils.inputlist('../test_input/01.2.txt')
 day2_input = utils.inputlist('../test_input/02.txt')
 day3_input = utils.inputlist('../test_input/03.txt')
 day4_input = utils.inputlist('../test_input/04.txt')
+day5_input = utils.inputlist('../test_input/05.txt')
 
 class TestSolutions(unittest.TestCase):
   def test_day1_1(self):
@@ -31,6 +32,12 @@ class TestSolutions(unittest.TestCase):
 
   def test_day4_2(self):
      self.assertEqual(day4.part_2(day4_input), 30)
+
+  def test_day5_1(self):
+     self.assertEqual(day5.part_1(day5_input), 35)
+
+  def test_day5_2(self):
+     self.assertEqual(day5.part_2(day5_input), 46)
 
 if __name__ == '__main__':
     unittest.main()
