@@ -15,11 +15,11 @@ class ConversionMap:
 
     for entry in ranges:
       dest_start, src_start, length = [int(i) for i in entry.split()]
-      self.converters.append(Converter(dest_start, src_start, src_start + length - 1))
+      self.converters.append(Converter(dest_start, src_start, src_start + length))
 
   def get_dest(self, src):
     for con in self.converters:
-      if con.src_start <= src <= con.src_end:
+      if con.src_start <= src < con.src_end:
         return abs(con.src_start - src) + con.dest_start
     
     return src
